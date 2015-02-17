@@ -1,0 +1,137 @@
+\chapter{Compléments de probabilités}
+
+\section{Loi de variables aléatoires réelles}
+
+Rappelons d'abord la définition d'une variable aléatoire réelle.
+
+\begin{definition}
+	Soit $(\Omega, \mathcal{A}, \mathcal{P})$ un espace de probabilité.
+	Une fonction \GSfunction{$X$}{$\Omega$}{$\real$} est une \textbf{variable
+	aléatoire réelle} (v.a.r) si elle est mesurable, c'est-à-dire $\forall A \in
+	\mathcal{A}$, $X^{-1}(A) \in \mathcal{B}(\real)$.
+\end{definition}
+
+Il faut bien se souvenir qu'une v.a.r n'est qu'une fonction mesurable définie
+sur un espace de probabilité!
+On définit également, pour chaque v.a.r, sa loi, définie grace à la probabilité
+définie sur l'ensemble $\Omega$.
+
+\begin{definition}
+	Soit $X$ une v.a.r sur l'espace de probabilité $(\Omega, \mathcal{A},
+	\mathcal{P})$. On définit \textbf{la loi de $X$} comme la fonction:
+
+	$P_{X} : (\real, \mathcal{B}(\real)) \rightarrow [0, 1] : A
+	\rightarrow P_{X}(A) = P(X^{-1}(A))$.
+
+	On dit que $X$ suit la loi $P_{X}$ et on note $X \sim P_{X}$.
+	On peut montrer que $P_{X}$ est une probabilité sur $\real$.
+\end{definition}
+
+La loi de $X$ est importante. En effet, celle-ci caractérise la loi pour ce qui
+est de son espérance, sa fonction de répartition, sa variance, \ldots.
+
+Une remarque importante est que si on prend 2 v.a.r $X$ et $Y$ sur un même
+espace de probabilité $(\Omega, \mathcal{A}, \mathcal{P})$, celle-ci peuvent
+prendre des valeurs différentes sur $\Omega$ ($\exists \omega \in \Omega$,
+$X(\omega) \neq Y(\omega))$ en ayant pour autant la même loi ($P_{X} = P_{Y}$).
+
+\begin{definition}
+	Soit $X$ une v.a.r. On définit \textbf{sa fonction de répartition} $F_{X} :
+	\real \rightarrow [0, 1] : x \rightarrow P_{X}(X \leq x)$.
+\end{definition}
+On distingue \textit{3 types} de v.a.r:
+
+\begin{definition}
+	Soit une variable aléatoire $X$. On dit que $X$ est \textbf{une v.a.r
+	discrète} si elle prend un nombre fini ou dénombrable de valeurs sur
+	$\Omega$.
+\end{definition}
+
+\begin{definition}
+	Soit une v.a.r $X$. On dit que $X$ est \textbf{une v.a.r continue} si sa loi
+	$P_{X}$ est continue.
+\end{definition}
+
+\begin{definition}
+	Soit une v.a.r $X$. On dit que $X$ est \textbf{une v.a.r mixte} si elle
+	n'est ni continue, ni discrète.
+\end{definition}
+
+%Exemples
+
+\section{Existence de variable aléatoires réelles}
+
+Nous disons souvent: Soit $X$ une v.a.r suivant la loi $\mathcal{P}$. Mais
+comment pouvons nous être sûr que pour tout espace de probabilité, nous pouvons
+définir une telle v.a.r? En fait, il est toujours possible, et nous pouvons même
+en construire explicitement une.
+
+\begin{proposition}
+	\label{var_existence}
+	Soit $(\Omega, \mathcal{A}, \mathcal{P})$ un espace de probabilité. Alors il
+	existe $X$ v.a.r tel que $X \sim \mathcal{P}$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+La preuve de \ref{var_existence} peut être étendue pour les vecteur aléatoires:
+
+\begin{proposition}
+	Soit $\mathcal{Q}$ une probabilité sur $\real^{d}$. Alors il existe
+	$X = (X_{1}, \cdots, X_{d})$ vecteur aléatoire tel que $X \sim \mathcal{Q}$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+Nous avons alors un corollaire assez puissant se rapportant à l'indépendance des
+v.a.r.
+
+\begin{proposition}
+	Soit $P_{1}, \cdots, P_{d}$ des probabilités sur $\real$. Alors il existe
+	$X_{1}, \cdots, X_{d}$ \textbf{indépendantes} tel que chaque $X_{i} \sim
+	P_{i}$.
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+\section{Quantiles}
+
+Prenons le jeu suivant:
+
+Prenons un nombre aléatoire entre 1 et 2000 (par exemple généré avec un
+ordinateur), et supposons que votre année de naissance soit paire.
+Les règles sont:
+
+\begin{itemize}
+	\item Si le résultat est impair, vous perdez 1000€.
+	\item Si le résultat est pair, vous gagner 1€.
+	\item Si le résultat est votre date de naissance, vous gagnez 2 000 000€.
+\end{itemize}
+Sous ces règles, allez-vous jouer?
+
+\begin{definition}
+	Soit $X$ une v.a.r. On définit \textbf{la médiane de $X$}, et on la note
+	$m_{X}$ par $m_{X} = \inf\left\{ x \in \real \, | \, P(X \leq x) \geq
+		\frac{1}{2} \right\}$.
+\end{definition}
+
+La médiane est la plus petite des valeurs tel que $F_{X}(x) \geq \frac{1}{2}$.
+La médiane d'une v.a.r dépend de la loi!
+
+On peut généraliser la définition de la médiane, ce qui nous amène à la
+définition de quantile.
+
+\begin{definition}
+	Soit $X$ une v.a.r, et $0 < \alpha < 1$. On définit \textbf{le quantile
+	d'ordre $\alpha$} ou \textbf{le $\alpha$-quantile}, noté $m_{\alpha}$ comme
+	$m_{\alpha} = \inf\left\{ x \in \real \, | \, P(X \leq \alpha) \geq \alpha
+	\right\}$.
+\end{definition}
+
+La médiane est le $\frac{1}{2}$-quantile.
